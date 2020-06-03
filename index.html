@@ -14,9 +14,14 @@
   <body>
     <div class="root">
       <div class="card card_small">
+        <!--
+          В бухгалтерии все перепутали...
+          Не нужно растровые картинки сохранять в svg. Они так занимают больше места.
+          Не нужно картинки без прозрачности сохранять в png. Они так занимают больше места.
+        -->
         <div
           class="card__img"
-          style="background-image: url(./img/Hotel-Photo-left.svg);"
+          style="background-image: url(./img/doubleTree-montreal-hotel.jpg);"
         ></div>
         <div class="card__information">
           <div class="card__primary-info">
@@ -27,6 +32,10 @@
             <p class="card__title">DoubleTree Montreal Hotel</p>
             <div class="card__icons">
               <!-- тут alt оставил потому что эти иконки - важная информация о номере -->
+              <!--
+                А вот иконки нужно сохранять в svg. Потому что это векторные изображения
+                и они будет лучше отображаться в формате формул, а не массива пикселей
+              -->
               <img src="./img/wi-fi-icon.svg" alt="Wifi" />
               <img src="./img/Restaurant-icon.svg" alt="Restaurant" />
             </div>
@@ -84,7 +93,9 @@
       <div class="card card_big">
         <div
           class="card__img"
-          style="background-image: url(./img/Hotel-Photo-right.svg);"
+          style="
+            background-image: url(./img/holiday-inn-resort-bali-benoa.jpg);
+          "
         ></div>
         <div class="card__information">
           <div class="card__primary-info">
