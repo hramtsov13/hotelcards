@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "DM Serif Display", serif;
+  background: #f6f7fa;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding-top: 150px;
+}
+.main_left,
+.main_right {
+  margin-bottom: 96px;
+  margin-top: 96px;
+  border-radius: 8px;
+  font-family: "DM Serif Display", serif;
+  background: #fff;
+}
+
+.main_left {
+  margin-left: 48px;
+}
+
+.main_right {
+  margin-left: 40px;
+  margin-right: 48px;
+}
+
+.main_left-img,
+.main_right-img {
+  padding: 100px;
+  border-radius: 8px 8px 0 0;
+  background-size: cover;
+}
+
+.main_left-img {
+  background-image: url(./img/Hotel-Photo-left.svg);
+}
+
+.main_right-img {
+  background-image: url(./img/Hotel-Photo-right.svg);
+}
+
+.information {
+  margin: 40px 24px 24px 24px;
+}
+
+.title-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 25px;
+  font-size: 1vmax;
+  color: #081f32;
+}
+
+.title h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.icons_item {
+  width: 2vmax;
+}
+
+.main_left .icons .icons_item:first-child {
+  display: none;
+}
+
+/*rating*/
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.1vmax;
+  width: 100%;
+}
+
+.rating-stars {
+  align-self: flex-start;
+}
+
+.rating-top {
+  align-self: flex-start;
+  margin-left: 30px;
+  width: 10vmax;
+  border-radius: 4px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1vmax;
+  line-height: 25px;
+  letter-spacing: 0.2em;
+  color: #fff;
+  background-color: #007ae9;
+}
+
+/*Date and rooms and price*/
+
+.date-rooms-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1vmax;
+  width: 100%;
+}
+
+/*Separate block for date and number of rooms*/
+
+.date-rooms {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: center;
+}
+
+.date,
+.rooms {
+  box-sizing: border-box;
+  padding: 0.4vmax 1.1vmax 0.4vmax 1.15vmax;
+  border: 1px solid #d7d8d9;
+  border-radius: 4px;
+  text-align: center;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1vmax;
+  line-height: 25px;
+  letter-spacing: 0.2em;
+  color: #007ae9;
+}
+
+.date {
+  margin-right: 1.1vmax;
+}
+
+/*Separate block for price on the right*/
+
+.price {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2 divs onsale - actual price, coloured in black;
+withinsale - price without sale, coloured in gray*/
+
+.onsale {
+  text-align: right;
+  font-family: "DM Serif Display", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3vmax;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: #081f32;
+}
+
+.withinsale {
+  text-align: right;
+  font-family: "DM Serif Display", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2vmax;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: #b1b4b9;
+}
+
+.withinsale-price {
+  text-decoration: line-through;
+}
+
+.onsale .onsale-night {
+  font-size: 2vmax;
+}
+
+.withinsale .withinsale-night {
+  font-size: 1.4vmax;
+}
+
+/*Description text*/
+
+.description {
+  margin-right: 41px;
+  margin-top: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 1.3vmax;
+  color: #6e798c;
+}
+
+/*Discount reminder*/
+
+.reminder {
+  margin-top: 33px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1vmax;
+  line-height: 25px;
+  letter-spacing: 0.02em;
+  color: #2ecc71;
+}
+
+/*Select rooms button*/
+
+.button {
+  margin-top: 10px;
+  padding: 25px 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: #2ecc71;
+}
+
+.button-text {
+  border-radius: 4px;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.3vmax;
+  line-height: 25px;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+}
+
+.button:hover {
+  box-shadow: 0px -4px 40px rgba(255, 255, 255, 0.5),
+    inset 0px 2px 80px rgba(255, 255, 255, 0.1),
+    0px 2px 14px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
