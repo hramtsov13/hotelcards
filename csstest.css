@@ -4,21 +4,30 @@
 
 html,
 body {
-  height: 100%;
   margin: 0;
+  /*
+    заменил главный шрифт на опен санс потому что, как правило,
+    шрифт без засечек используется как основной, а с засечками как
+    акцентный. Ну и тут как раз такая ситуация.
+    DM Serif Display в 2 местах, все остальное open Sans
+  */
   font-family: "DM Serif Display", serif;
   background: #eff0f3;
-}
-.main {
 }
 
 .main_left,
 .main_right {
+  /*
+    если мы скроем все, что выходит за рамки карточки,
+    то и углы одинаковыми станут
+  */
+  overflow: hidden;
   border-radius: 8px;
   background: #fff;
 }
 .main {
   display: flex;
+  align-items: flex-start;
   padding: 20px;
 }
 
@@ -161,58 +170,64 @@ body {
   line-height: 14px;
 }
 
-/*Description text*/
-
-.description {
-  margin-right: 41px;
-  margin-top: 25px;
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1.3vmax;
-  color: #6e798c;
+.date-rooms-price {
+  margin-bottom: 24px;
 }
 
-/*Discount reminder*/
+.description {
+  /*
+  Такой финт с шириной для того, что-бы текст не был слишком
+  широким и удобным для чтения. max-width для того случая,
+  когда карточка становится уже чем 448px что бы текст
+  не вылазил за границы.
+  */
+  width: 448px;
+  max-width: 100%;
+
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #6e798c;
+  margin-top: 33px;
+}
 
 .reminder {
-  margin-top: 33px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.1vmax;
+  font-size: 14px;
   line-height: 25px;
   letter-spacing: 0.02em;
   color: #2ecc71;
+  margin-bottom: 10px;
 }
 
-/*Select rooms button*/
-
 .button {
-  margin-top: 10px;
-  padding: 25px 0;
+  padding: 28px 0;
   width: 100%;
   border: none;
   border-radius: 8px;
   background: #2ecc71;
-}
-
-.button-text {
-  border-radius: 4px;
   text-align: center;
   font-family: "Open Sans", sans-serif;
-  font-style: normal;
   font-weight: bold;
-  font-size: 1.3vmax;
-  line-height: 25px;
   letter-spacing: 0.2em;
+  line-height: 25px;
   color: #ffffff;
+  font-size: 17px;
+  transition: background-color 0.1s;
+  /*
+    курсор переставить в pointer лучше просто у кнопки.
+    Чем меньше свойств меняется - тем браузеру легче это отрисовать
+    Нормально поставить pointer на ховер, но он и так действует
+    на курсор только когда мышка находится на элементе.
+    Так что можно менять курсор просто у элемента
+  */
+  cursor: pointer;
 }
 
 .button:hover {
-  box-shadow: 0px -4px 40px rgba(255, 255, 255, 0.5),
-    inset 0px 2px 80px rgba(255, 255, 255, 0.1),
-    0px 2px 14px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+  /*
+   Убрал бокс-шэдоу потому что когда попап на попапе мне не нравится :)
+  */
+  background: #22a157;
 }
