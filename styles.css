@@ -50,18 +50,50 @@ body {
   background-position: center;
 }
 
-.card__img-like {
+.checkbox {
   float: right;
-  margin-top: 10px;
-  margin-right: 4px;
-}
-
-.card__img-like path {
+  margin-right: 24px;
+  margin-top: 24px;
   cursor: pointer;
 }
 
-.card__img-like path:active {
-  fill: #f8593b;
+input[type="checkbox"] {
+  position: relative;
+  height: 14px;
+  width: 14px;
+  outline: none;
+  border-color: #fff;
+  background-color: #fff;
+  transform: rotate(45deg);
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"]::before {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  height: 50%;
+  width: 100%;
+  top: -44%;
+  border-radius: 7px 7px 0 0;
+}
+
+input[type="checkbox"]::after {
+  position: absolute;
+  content: "";
+  background-color: #fff;
+  height: 60%;
+  width: 98%;
+  transform: rotate(-90deg);
+  border-radius: 7px 7px 0 0;
+  top: 20%;
+  right: 63%;
+}
+
+input[type="checkbox"]:checked,
+input:checked[type="checkbox"]:before,
+input:checked[type="checkbox"]::after {
+  background-color: #f8593b;
 }
 
 .card__information {
