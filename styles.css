@@ -50,6 +50,20 @@ body {
   background-position: center;
 }
 
+.card__img-like {
+  float: right;
+  margin-top: 10px;
+  margin-right: 4px;
+}
+
+.card__img-like path {
+  cursor: pointer;
+}
+
+.card__img-like path:active {
+  fill: #f8593b;
+}
+
 .card__information {
   padding: 40px 24px 24px;
 }
