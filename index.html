@@ -6,202 +6,155 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Карточка</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="csstest.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="main">
-      <!--Wrapper for 2 cards-->
-      <div class="main_left">
-        <!--Left card wrapper-->
-        <div class="main_left-img"></div>
-        <!--Hotel image-->
-        <div class="information">
-          <!--Includes all the hotel inf./settings-->
-          <div class="title-icons">
-            <!--Hotel name and wifi/rest./swim. icons wrapper-->
-            <div class="title">
-              <h1>DoubleTree Montreal Hotel</h1>
-            </div>
-            <div class="icons">
-              <img
-                class="icons_item"
-                src="./img/Swimming-icon.svg"
-                alt="Swim"
-              />
-              <img class="icons_item" src="./img/wi-fi-icon.svg" alt="Wifi" />
-              <img
-                class="icons_item"
-                src="./img/Restaurant-icon.svg"
-                alt="Restaurant"
-              />
+    <div class="root">
+      <div class="card card_small">
+        <!--
+          В бухгалтерии все перепутали...
+          Не нужно растровые картинки сохранять в svg. Они так занимают больше места.
+          Не нужно картинки без прозрачности сохранять в png. Они так занимают больше места.
+        -->
+        <!-- 
+          Еще по картинкам. Их нужно оптимизировать. И svg тоже. Картинки - самая частая ошибка долгой загрузки страницы
+          SVG - https://jakearchibald.github.io/svgomg/
+          JPG/PNG - https://tinyjpg.com/
+        -->
+        <div
+          class="card__img"
+          style="background-image: url(./img/doubleTree-montreal-hotel.jpg);"
+        ></div>
+        <div class="card__information">
+          <div class="card__primary-info">
+            <!--
+              <p> вместо <h1 потому что теги заголовков h* задают структуру документа на странице.
+              А карточка просто представление информации в одним из разделов
+            -->
+            <p class="card__title">DoubleTree Montreal Hotel</p>
+            <div class="card__icons">
+              <!-- тут alt оставил потому что эти иконки - важная информация о номере -->
+              <!--
+                А вот иконки нужно сохранять в svg. Потому что это векторные изображения
+                и они будет лучше отображаться в формате формул, а не массива пикселей
+              -->
+              <img src="./img/wi-fi-icon.svg" alt="Wifi" />
+              <img src="./img/Restaurant-icon.svg" alt="Restaurant" />
             </div>
           </div>
           <div class="rating">
-            <!--Rating stars and #number wrapper-->
-            <div class="rating-stars">
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+            <svg
+              class="rating__stars"
+              width="112"
+              height="16"
+              viewBox="0 0 112 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.3039 5.58184L10.8978 5.16521C10.6201 5.13996 10.3801 4.9632 10.2666 4.69807L8.68842 0.872617C8.43592 0.241354 7.5394 0.241354 7.28689 0.872617L5.72136 4.69807C5.62036 4.9632 5.36785 5.13996 5.09009 5.16521L0.683877 5.58184C0.0273629 5.64497 -0.237768 6.46561 0.254618 6.9075L3.57506 9.82393C3.78969 10.0133 3.87807 10.2911 3.81494 10.5688L2.81755 14.6593C2.66604 15.3033 3.36043 15.8334 3.9412 15.4927L7.61515 13.3336C7.85503 13.1948 8.14541 13.1948 8.38529 13.3336L12.0594 15.4927C12.6401 15.8334 13.3345 15.3159 13.1829 14.6593L12.1981 10.5688C12.135 10.2911 12.2234 10.0133 12.438 9.82393L15.7584 6.9075C16.2382 6.46561 15.9604 5.64497 15.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+              <path
+                d="M39.3039 5.58184L34.8978 5.16521C34.6201 5.13996 34.3801 4.9632 34.2666 4.69807L32.6884 0.872617C32.4359 0.241354 31.5394 0.241354 31.2869 0.872617L29.7214 4.69807C29.6204 4.9632 29.3678 5.13996 29.0901 5.16521L24.6839 5.58184C24.0274 5.64497 23.7622 6.46561 24.2546 6.9075L27.5751 9.82393C27.7897 10.0133 27.8781 10.2911 27.8149 10.5688L26.8175 14.6593C26.666 15.3033 27.3604 15.8334 27.9412 15.4927L31.6151 13.3336C31.855 13.1948 32.1454 13.1948 32.3853 13.3336L36.0594 15.4927C36.6401 15.8334 37.3345 15.3159 37.1829 14.6593L36.1981 10.5688C36.135 10.2911 36.2234 10.0133 36.438 9.82393L39.7584 6.9075C40.2382 6.46561 39.9604 5.64497 39.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+              <path
+                d="M63.3039 5.58184L58.8978 5.16521C58.6201 5.13996 58.3801 4.9632 58.2666 4.69807L56.6884 0.872617C56.4359 0.241354 55.5394 0.241354 55.2869 0.872617L53.7214 4.69807C53.6204 4.9632 53.3678 5.13996 53.0901 5.16521L48.6839 5.58184C48.0274 5.64497 47.7622 6.46561 48.2546 6.9075L51.5751 9.82393C51.7897 10.0133 51.8781 10.2911 51.8149 10.5688L50.8175 14.6593C50.666 15.3033 51.3604 15.8334 51.9412 15.4927L55.6151 13.3336C55.855 13.1948 56.1454 13.1948 56.3853 13.3336L60.0594 15.4927C60.6401 15.8334 61.3345 15.3159 61.1829 14.6593L60.1981 10.5688C60.135 10.2911 60.2234 10.0133 60.438 9.82393L63.7584 6.9075C64.2382 6.46561 63.9604 5.64497 63.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+              <path
+                d="M87.3039 5.58184L82.8978 5.16521C82.6201 5.13996 82.3801 4.9632 82.2666 4.69807L80.6884 0.872617C80.4359 0.241354 79.5394 0.241354 79.2869 0.872617L77.7214 4.69807C77.6204 4.9632 77.3678 5.13996 77.0901 5.16521L72.6839 5.58184C72.0274 5.64497 71.7622 6.46561 72.2546 6.9075L75.5751 9.82393C75.7897 10.0133 75.8781 10.2911 75.8149 10.5688L74.8175 14.6593C74.666 15.3033 75.3604 15.8334 75.9412 15.4927L79.6151 13.3336C79.855 13.1948 80.1454 13.1948 80.3853 13.3336L84.0594 15.4927C84.6401 15.8334 85.3345 15.3159 85.1829 14.6593L84.1981 10.5688C84.135 10.2911 84.2234 10.0133 84.438 9.82393L87.7584 6.9075C88.2382 6.46561 87.9604 5.64497 87.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-flat.svg"
-                alt="rating star"
+              <path
+                d="M111.304 5.58184L106.898 5.16521C106.62 5.13996 106.38 4.9632 106.267 4.69807L104.688 0.872617C104.436 0.241354 103.539 0.241354 103.287 0.872617L101.721 4.69807C101.62 4.9632 101.368 5.13996 101.09 5.16521L96.6839 5.58184C96.0274 5.64497 95.7622 6.46561 96.2546 6.9075L99.5751 9.82393C99.7897 10.0133 99.8781 10.2911 99.8149 10.5688L98.8175 14.6593C98.666 15.3033 99.3604 15.8334 99.9412 15.4927L103.615 13.3336C103.855 13.1948 104.145 13.1948 104.385 13.3336L108.059 15.4927C108.64 15.8334 109.335 15.3159 109.183 14.6593L108.198 10.5688C108.135 10.2911 108.223 10.0133 108.438 9.82393L111.758 6.9075C112.238 6.46561 111.96 5.64497 111.304 5.58184Z"
               />
-            </div>
-            <div class="rating-top">
-              <span>#7 BUDGET</span>
-            </div>
+            </svg>
+            <div class="card__badge card__badge_primary">#7 BUDGET</div>
           </div>
-          <div class="date-rooms-price">
-            <!--Wrapper for date/rooms and price boxes-->
-            <div class="date-rooms">
-              <div class="date">SEP 22-27</div>
-              <div class="rooms">2 ROOMS</div>
+          <div class="card__details">
+            <div class="card__details-badges">
+              <div class="card__badge card__badge_secondary">SEP 22-27</div>
+              <div class="card__badge card__badge_secondary">2 ROOMS</div>
             </div>
             <div class="price">
-              <div class="onsale">
-                <!--actual price with discount-->
-                <span class="onsale-price">$99</span
-                ><span class="onsale-night">/night</span>
-              </div>
-              <div class="withinsale">
-                <!--price without discount-->
-                <span class="withinsale-price">$149</span
-                ><span class="withinsale-night">/night</span>
-              </div>
+              <div class="price__actual"><span>$99</span>/night</div>
+              <div class="price__old"><span>$149</span>/night</div>
             </div>
           </div>
-          <div class="description">
-            <p>
-              The Hotel DoubleTree Montréal Centre-Ville / Downtown is set in
-              the heart of the city, a few steps away from the lovely cafés and
-              boutiques. The Hotel offers warm hospitality in a wonderful
-              relaxed atmosphere and many other services.
-            </p>
-          </div>
-          <div class="reminder">
-            <p>You're saving $50</p>
-          </div>
-          <button class="button">
-            <span class="button-text">SELECT ROOMS</span>
-          </button>
+          <p class="description">
+            The Hotel DoubleTree Montréal Centre-Ville / Downtown is set in the
+            heart of the city, a few steps away from the lovely cafés and
+            boutiques. The Hotel offers warm hospitality in a wonderful relaxed
+            atmosphere and many other services.
+          </p>
+          <p class="reminder">
+            You're saving
+            <!-- Это место - ловушка для подростков. Если посмотреть в фигму $50 другого шрифа. 600, а не 400 :) -->
+            <span>$50</span>
+          </p>
+          <button class="button">SELECT ROOMS</button>
         </div>
       </div>
-
-      <div class="main_right">
-        <!--Right card wrapper-->
-        <div class="main_right-img"></div>
-        <!--Hotel image-->
-        <div class="information">
-          <!--Includes all the hotel inf./settings-->
-          <div class="title-icons">
-            <!--Hotel name and wifi/rest./swim. icons wrapper-->
-            <div class="title">
-              <h1>Holiday Inn Resort Bali Benoa</h1>
-            </div>
-            <div class="icons">
-              <img
-                class="icons_item"
-                src="./img/Swimming-icon.svg"
-                alt="Swim"
-              />
-              <img class="icons_item" src="./img/wi-fi-icon.svg" alt="Wifi" />
-              <img
-                class="icons_item"
-                src="./img/Restaurant-icon.svg"
-                alt="Restaurant"
-              />
+      <div class="card card_big">
+        <div
+          class="card__img"
+          style="
+            background-image: url(./img/holiday-inn-resort-bali-benoa.jpg);
+          "
+        ></div>
+        <div class="card__information">
+          <div class="card__primary-info">
+            <p class="card__title">Holiday Inn Resort Bali Benoa</p>
+            <div class="card__icons">
+              <img src="./img/Swimming-icon.svg" alt="Swimming" />
+              <img src="./img/wi-fi-icon.svg" alt="Wifi" />
+              <img src="./img/Restaurant-icon.svg" alt="Restaurant" />
             </div>
           </div>
           <div class="rating">
-            <!--Rating stars and #number wrapper-->
-            <div class="rating-stars">
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+            <svg
+              class="rating__stars"
+              width="112"
+              height="16"
+              viewBox="0 0 112 16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.3039 5.58184L10.8978 5.16521C10.6201 5.13996 10.3801 4.9632 10.2666 4.69807L8.68842 0.872617C8.43592 0.241354 7.5394 0.241354 7.28689 0.872617L5.72136 4.69807C5.62036 4.9632 5.36785 5.13996 5.09009 5.16521L0.683877 5.58184C0.0273629 5.64497 -0.237768 6.46561 0.254618 6.9075L3.57506 9.82393C3.78969 10.0133 3.87807 10.2911 3.81494 10.5688L2.81755 14.6593C2.66604 15.3033 3.36043 15.8334 3.9412 15.4927L7.61515 13.3336C7.85503 13.1948 8.14541 13.1948 8.38529 13.3336L12.0594 15.4927C12.6401 15.8334 13.3345 15.3159 13.1829 14.6593L12.1981 10.5688C12.135 10.2911 12.2234 10.0133 12.438 9.82393L15.7584 6.9075C16.2382 6.46561 15.9604 5.64497 15.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+              <path
+                d="M39.3039 5.58184L34.8978 5.16521C34.6201 5.13996 34.3801 4.9632 34.2666 4.69807L32.6884 0.872617C32.4359 0.241354 31.5394 0.241354 31.2869 0.872617L29.7214 4.69807C29.6204 4.9632 29.3678 5.13996 29.0901 5.16521L24.6839 5.58184C24.0274 5.64497 23.7622 6.46561 24.2546 6.9075L27.5751 9.82393C27.7897 10.0133 27.8781 10.2911 27.8149 10.5688L26.8175 14.6593C26.666 15.3033 27.3604 15.8334 27.9412 15.4927L31.6151 13.3336C31.855 13.1948 32.1454 13.1948 32.3853 13.3336L36.0594 15.4927C36.6401 15.8334 37.3345 15.3159 37.1829 14.6593L36.1981 10.5688C36.135 10.2911 36.2234 10.0133 36.438 9.82393L39.7584 6.9075C40.2382 6.46561 39.9604 5.64497 39.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+              <path
+                d="M63.3039 5.58184L58.8978 5.16521C58.6201 5.13996 58.3801 4.9632 58.2666 4.69807L56.6884 0.872617C56.4359 0.241354 55.5394 0.241354 55.2869 0.872617L53.7214 4.69807C53.6204 4.9632 53.3678 5.13996 53.0901 5.16521L48.6839 5.58184C48.0274 5.64497 47.7622 6.46561 48.2546 6.9075L51.5751 9.82393C51.7897 10.0133 51.8781 10.2911 51.8149 10.5688L50.8175 14.6593C50.666 15.3033 51.3604 15.8334 51.9412 15.4927L55.6151 13.3336C55.855 13.1948 56.1454 13.1948 56.3853 13.3336L60.0594 15.4927C60.6401 15.8334 61.3345 15.3159 61.1829 14.6593L60.1981 10.5688C60.135 10.2911 60.2234 10.0133 60.438 9.82393L63.7584 6.9075C64.2382 6.46561 63.9604 5.64497 63.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+              <path
+                d="M87.3039 5.58184L82.8978 5.16521C82.6201 5.13996 82.3801 4.9632 82.2666 4.69807L80.6884 0.872617C80.4359 0.241354 79.5394 0.241354 79.2869 0.872617L77.7214 4.69807C77.6204 4.9632 77.3678 5.13996 77.0901 5.16521L72.6839 5.58184C72.0274 5.64497 71.7622 6.46561 72.2546 6.9075L75.5751 9.82393C75.7897 10.0133 75.8781 10.2911 75.8149 10.5688L74.8175 14.6593C74.666 15.3033 75.3604 15.8334 75.9412 15.4927L79.6151 13.3336C79.855 13.1948 80.1454 13.1948 80.3853 13.3336L84.0594 15.4927C84.6401 15.8334 85.3345 15.3159 85.1829 14.6593L84.1981 10.5688C84.135 10.2911 84.2234 10.0133 84.438 9.82393L87.7584 6.9075C88.2382 6.46561 87.9604 5.64497 87.3039 5.58184Z"
               />
-              <img
-                class="rating-stars_item"
-                src="./img/rating-star.svg"
-                alt="rating star"
+              <path
+                d="M111.304 5.58184L106.898 5.16521C106.62 5.13996 106.38 4.9632 106.267 4.69807L104.688 0.872617C104.436 0.241354 103.539 0.241354 103.287 0.872617L101.721 4.69807C101.62 4.9632 101.368 5.13996 101.09 5.16521L96.6839 5.58184C96.0274 5.64497 95.7622 6.46561 96.2546 6.9075L99.5751 9.82393C99.7897 10.0133 99.8781 10.2911 99.8149 10.5688L98.8175 14.6593C98.666 15.3033 99.3604 15.8334 99.9412 15.4927L103.615 13.3336C103.855 13.1948 104.145 13.1948 104.385 13.3336L108.059 15.4927C108.64 15.8334 109.335 15.3159 109.183 14.6593L108.198 10.5688C108.135 10.2911 108.223 10.0133 108.438 9.82393L111.758 6.9075C112.238 6.46561 111.96 5.64497 111.304 5.58184Z"
               />
-            </div>
-            <div class="rating-top">
-              <span>#3 SPA</span>
-            </div>
+            </svg>
+            <div class="card__badge card__badge_primary">#3 SPA</div>
           </div>
-          <div class="date-rooms-price">
-            <div class="date-rooms">
-              <div class="date">SEP 25-30</div>
-              <div class="rooms">1 ROOM</div>
+          <div class="card__details">
+            <div class="card__details-badges">
+              <div class="card__badge card__badge_secondary">SEP 25-30</div>
+              <div class="card__badge card__badge_secondary">1 ROOM</div>
             </div>
             <div class="price">
-              <div class="onsale">
-                <!--actual price with discount-->
-                <span class="onsale-price">$250</span>
-                <span class="onsale-night">/night</span>
-              </div>
-              <div class="withinsale">
-                <!--price without discount-->
-                <span class="withinsale-price">$400</span>
-                <span class="withinsale-night">/night</span>
-              </div>
+              <div class="price__actual"><span>$250</span>/night</div>
+              <div class="price__old"><span>$400</span>/night</div>
             </div>
           </div>
-          <div class="description">
-            <p>
-              Located on the sparkling waterfront of Tanjung Benoa Beach, the
-              Holiday Inn Resort Bali Benoa offers beachfront activities, an
-              exciting Kids Club, four pools, chilled-out lounge zones, free
-              Wi-Fi and our signature Tea Tree Spa for optimum relaxation.
-            </p>
-          </div>
-          <div class="reminder">
-            <p>You're saving $150</p>
-          </div>
-          <button class="button">
-            <span class="button-text">SELECT ROOMS</span>
-          </button>
+          <p class="description">
+            Located on the sparkling waterfront of Tanjung Benoa Beach, the
+            Holiday Inn Resort Bali Benoa offers beachfront activities, an
+            exciting Kids Club, four pools, chilled-out lounge zones, free Wi-Fi
+            and our signature Tea Tree Spa for optimum relaxation.
+          </p>
+          <p class="reminder">You're saving<span>$50</span></p>
+          <button class="button">SELECT ROOMS</button>
         </div>
       </div>
     </div>
